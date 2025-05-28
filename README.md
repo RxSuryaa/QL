@@ -31,3 +31,40 @@ SELECT * FROM 3001_departments;
 
 -- View employees
 SELECT * FROM 3001_employees;
+
+
+_______________________________________________________________
+
+
+
+CREATE DATABASE testdb;
+USE testdb;
+
+CREATE TABLE worker (
+    worker_id INT PRIMARY KEY,
+    first_name VARCHAR(50),
+    last_name VARCHAR(50),
+    salary INT,
+    department VARCHAR(50)
+);
+
+INSERT INTO worker VALUES 
+(001, 'Monika', 'Arora', 100000, 'HR'),
+(002, 'Niharika', 'Verma', 80000, 'Admin'),
+(003, 'Vishal', 'Singhal', 300000, 'HR'),
+(004, 'Amitabh', 'Singh', 500000, 'Admin'),
+(005, 'Vivek', 'Bhati', 500000, 'Admin'),
+(006, 'Vipul', 'Diwan', 200000, 'Account'),
+(007, 'Satish', 'Kumar', 75000, 'Account'),
+(008, 'Geetika', 'Chauhan', 90000, 'Admin');
+
+
+SELECT * FROM worker
+WHERE salary BETWEEN 100000 AND 500000;
+
+SELECT COUNT(*) AS admin_count
+FROM worker
+WHERE department = 'Admin';
+
+SELECT * FROM worker
+WHERE first_name IN ('Vipul', 'Satish');
